@@ -1,0 +1,6 @@
+name: Deploy AWS
+author: Kaustubh
+description: Custom action for aws 
+runs:
+    using: "docker"
+    image: "Dockerfile"
