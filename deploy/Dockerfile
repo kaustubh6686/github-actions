@@ -6,6 +6,9 @@ RUN pip3 install awscli
 COPY aws /root/.aws
 COPY entrypoint.sh /entrypoint.sh
 
+RUN aws --version
+
+
 # shh-keygen => pair
 
 # aws instance-conncet public.key
