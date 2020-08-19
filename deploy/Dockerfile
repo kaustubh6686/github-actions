@@ -16,7 +16,4 @@ RUN aws --version
 # on EC2 instance -> script 1 params -> hash of commit 
 
 
-
-
-
-#ENTRYPOINT [ "/entrypoint.sh" ]
+ENTRYPOINT [ "/entrypoint.sh" ]
