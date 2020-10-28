@@ -32,3 +32,6 @@ jobs:
         echo "::set-env name=AWS_INSTANCE_ID::${{env.CLUSTER}}_AWS_INSTANCE_ID"
         echo "::set-env name=AWS_ACCESS_KEY_ID::${{env.CLUSTER}}_AWS_ACCESS_KEY_ID"
         echo "::set-env name=AWS_SECRET_ACCESS_KEY::${{env.CLUSTER}}_AWS_SECRET_ACCESS_KEY"
+        
+    - name: Custom
+      uses: "./deploy@master"
