@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Sample Deploy
+name: Sample-Deploy
 
 env:
   CLUSTER: 'QA'
