@@ -25,9 +25,9 @@ jobs:
     steps:
     - name: Set environment variable names 
       run: |
-        echo "AWS_ACCESS_KEY_ID=${{github.event.inputs.cluster}}_AWS_ACCESS_KEY_ID"
+        echo "AWS_ACCESS_KEY_ID=${{github.event.inputs.cluster}}_AWS_ACCESS_KEY_ID" >> $GITHUB_ENV
         echo ${{ secrets[env.AWS_ACCESS_KEY_ID] }}
-        echo "AWS_SECRET_ACCESS_KEY=${{github.event.inputs.cluster}}_AWS_SECRET_ACCESS_KEY"
+        echo "AWS_SECRET_ACCESS_KEY=${{github.event.inputs.cluster}}_AWS_SECRET_ACCESS_KEY" >> $GITHUB_ENV
         echo ${{ secrets[env.AWS_SECRET_ACCESS_KEY] }}
         
     # - name: Checkout 
