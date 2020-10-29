@@ -2,20 +2,17 @@
 
 name: Sample-Deploy
 
-env:
-  CLUSTER: 'QA'
-
-  QA_AWS_REGION: 'us-west-2'
-  QA_AWS_INSTANCE_ID: 'i-0a9665bae31882034'
-
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
   workflow_dispatch:
     inputs:
+      cluster: 
+        required: true
+        description: Environment can be ( qa | staging | production )
       tag:
         required: true
-        description: 'Tag to deploy on QA'
+        description: 'Tag to deploy'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -28,13 +25,11 @@ jobs:
     steps:
     - name: Set environment variable names 
       run: |
-        echo "::set-env name=AWS_REGION::${{env.CLUSTER}}_AWS_REGION"
-        echo "::set-env name=AWS_INSTANCE_ID::${{env.CLUSTER}}_AWS_INSTANCE_ID"
-        echo "::set-env name=AWS_ACCESS_KEY_ID::${{env.CLUSTER}}_AWS_ACCESS_KEY_ID"
-        echo "::set-env name=AWS_SECRET_ACCESS_KEY::${{env.CLUSTER}}_AWS_SECRET_ACCESS_KEY"
+        echo "::set-env name=AWS_ACCESS_KEY_ID::${{inputs.CLUSTER}}_AWS_ACCESS_KEY_ID"
+        echo "::set-env name=AWS_SECRET_ACCESS_KEY::${{inputs.CLUSTER}}_AWS_SECRET_ACCESS_KEY"
         
-    - name: Checkout 
-      uses: actions/checkout@v2
+    # - name: Checkout 
+    #   uses: actions/checkout@v2
       
-    - name: Custom
-      uses: ./deploy
+    # - name: Custom
+    #   uses: ./deploy
