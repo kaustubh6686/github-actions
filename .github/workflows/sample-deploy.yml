@@ -34,6 +34,6 @@ jobs:
     - name: Custom
       uses: ./deploy
       with:
-        CLUSTER: ${CLUSTER^^}
+        CLUSTER: "${CLUSTER^^}"
         AWS_ACCESS_KEY_ID:  ${{ secrets[env.AWS_ACCESS_KEY_ID] }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets[env.AWS_SECRET_ACCESS_KEY] }}
