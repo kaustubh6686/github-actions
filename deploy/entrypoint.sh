@@ -1,6 +1,9 @@
 #!/bin/bash
 echo "Received Arguments"
-echo "$1"
+
+for i in $*; do 
+   echo $i 
+done
 
 echo "::debug ::Hello World";    
 # mkdir /keys
