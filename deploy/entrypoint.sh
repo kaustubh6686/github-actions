@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "Received Arguments"
+echo "$1"
 
 echo "::debug ::Hello World";    
 # mkdir /keys
