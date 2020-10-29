@@ -1,6 +1,16 @@
 name: Deploy AWS
 author: Kaustubh
 description: Custom action for aws 
+inputs:
+  CLUSTER:  # id of input
+    description: 'Cluster'
+    required: true
+  AWS_ACCESS_KEY_ID:  # id of input
+    description: 'AWS_ACCESS_KEY_ID'
+    required: true
+  AWS_SECRET_ACCESS_KEY:  # id of input
+    description: 'AWS_SECRET_ACCESS_KEY'
+    required: true
 runs:
     using: "docker"
     image: "Dockerfile"
