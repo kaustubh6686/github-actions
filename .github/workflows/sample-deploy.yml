@@ -9,7 +9,7 @@ on:
     inputs:
       cluster: 
         required: true
-        description: Environment can be ( qa | staging | production )
+        description: Environment can be (qa | staging | production)
       tag:
         required: true
         description: 'Tag to deploy'
