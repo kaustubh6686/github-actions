@@ -6,8 +6,6 @@ on:
         required: true
         description: Valid inputs are (qa, master)
         default: 'qa'
-  # push:
-  #   branches: [master, qa
   
 jobs:
   validation:
@@ -16,4 +14,4 @@ jobs:
     steps:
       - id: validation-success
         name: Validation Success
-        run: # echo "Valid"
+        run: echo "Valid"
