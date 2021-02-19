@@ -19,4 +19,10 @@ jobs:
       - id: validation-error
         name: Validation Error
         if: github.event.inputs.branch != 'qa' && github.event.inputs.branch != 'master'
-        run: exit 1
+        run: echo "::error ::Invalid branch name"; exit 1;
+        
+  push-to-ecr:
+      runs-on: ubuntu-latest
+      needs: validation
+      steps:
+        - run: echo "PUSH TO ECR"
