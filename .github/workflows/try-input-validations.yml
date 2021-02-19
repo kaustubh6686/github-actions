@@ -1,0 +1,19 @@
+name: Input Validation
+on:
+  workflow_dispatch:
+    inputs:
+      branch: 
+        required: true
+        description: Valid inputs are (qa, master)
+        default: 'qa'
+  # push:
+  #   branches: [master, qa
+  
+jobs:
+  validation:
+    runs-on: ubuntu-latest
+    if: github.event.inputs.branch == 'qa' || github.event.inputs.branch == 'master'
+    steps:
+      - id: validation-success
+        name: Validation Success
+        run: # echo "Valid"
