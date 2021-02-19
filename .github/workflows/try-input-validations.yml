@@ -8,17 +8,15 @@ on:
         default: 'qa'
   
 jobs:
-  validation-success:
+  validation:
     runs-on: ubuntu-latest
-    if: github.event.inputs.branch == 'qa' || github.event.inputs.branch == 'master'
     steps:
       - id: validation-success
         name: Validation Success
+        if: github.event.inputs.branch == 'qa' || github.event.inputs.branch == 'master'
         run: echo "Valid"
-  validation-error:
-    runs-on: ubuntu-latest
-    if: github.event.inputs.branch != 'qa' && github.event.inputs.branch != 'master'
-    steps:
+        
       - id: validation-error
         name: Validation Error
+        if: github.event.inputs.branch != 'qa' && github.event.inputs.branch != 'master'
         run: exit 1
