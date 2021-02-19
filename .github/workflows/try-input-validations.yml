@@ -21,4 +21,4 @@ jobs:
     steps:
       - id: validation-error
         name: Validation Error
-        run: echo "Invalid"
+        run: exit 1
