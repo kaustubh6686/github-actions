@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Extract branch name
-        #if: github.eventName == 'push'
+        if: github.event_name == 'push'
         run: |
-          console.log(github)
+          echo "${$GITHUB_EVENT_NAME}"
         
