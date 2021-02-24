@@ -1,6 +1,6 @@
 name: Try Trigger Release
 on:
-    release:
+  release:
     types:
       - created
       
