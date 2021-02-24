@@ -20,11 +20,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: if-trigger-is-release
-        if: ${{GITHUB_EVENT_NAME}} == 'release'
+        if: $GITHUB_EVENT_NAME == 'release'
         run: |
           echo "release" >> ${env.IMAGE_TAG}
       - name: if-trigger-is-push-or-pull_request
-        if: ${{GITHUB_EVENT_NAME}} != 'release'
+        if: $GITHUB_EVENT_NAME != 'release'
         run: |
           echo "push-pr" >> ${env.IMAGE_TAG}
 
