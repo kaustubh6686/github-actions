@@ -26,4 +26,4 @@ jobs:
       - name: Print branch name
         run: | 
           echo ${{ steps.extract_branch.outputs.branch }}
-          echo ${{github.event.action}}
+          echo ${{GITHUB_EVENT_NAME}}
