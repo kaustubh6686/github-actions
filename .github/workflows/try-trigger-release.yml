@@ -24,7 +24,7 @@ jobs:
       - name: Extract branch name
         if: github.event_name == 'push'
         run: |
-          echo "release" >> ${env.IMAGE_TAG}
+          echo "::set-env name=IMAGE_TAG::release"
           echo "${GITHUB_EVENT_NAME}"
           echo "${{ env.IMAGE_TAG }}"
         
