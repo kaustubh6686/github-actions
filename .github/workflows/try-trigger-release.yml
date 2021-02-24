@@ -1,5 +1,13 @@
 name: Try Trigger Release
 on:
+  push:
+    branches:
+      - master
+      - qa
+  pull_request:
+    branches:
+      - master
+      - qa
   release:
     types:
       - created
