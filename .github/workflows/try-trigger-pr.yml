@@ -11,7 +11,7 @@ on:
     types:
       - created
 env:
-  IMAGE_TAG: ''
+  IMAGE_TAG: 'IMAGE_TAG_TEST'
 
 jobs:
   calculate-tag-name:
