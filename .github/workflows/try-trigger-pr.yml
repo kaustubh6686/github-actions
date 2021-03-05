@@ -20,10 +20,12 @@ jobs:
       - name: If trigger is release
         if: github.event_name == 'release'
         run: |
+          echo "IMAGE_TAG=release-${GITHUB_REF#refs/tags/}"
           echo "IMAGE_TAG=release-${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
       - name: If trigger is push or pull_request
         if: github.event_name != 'release'
         run: |
+          echo "IMAGE_TAG=${GITHUB_SHA}-${GITHUB_REF#refs/heads/}"  
           echo "IMAGE_TAG=${GITHUB_SHA}-${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
           
   push-to-ecr:
@@ -37,6 +39,7 @@ jobs:
           ECR_REPOSITORY: flyer-service-api    
           IMAGE_URL: ${{ steps.login-ecr.outputs.registry }}/flyer-service-api:${{ env.IMAGE_TAG }}
         run: | 
+          echo "Image Tag: ${{ env.IMAGE_TAG }}"
           echo Repository: $ECR_REPOSITORY 
           echo Image: $IMAGE_URL
 
