@@ -27,6 +27,9 @@ jobs:
         run: |
           echo "IMAGE_TAG=${GITHUB_SHA}-${GITHUB_REF#refs/heads/}"  
           echo "IMAGE_TAG=${GITHUB_SHA}-${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+      - name: Output Image Tag
+        run: |
+          echo "Image Tag: ${{ env.IMAGE_TAG }}"  
           
   push-to-ecr:
     runs-on: ubuntu-latest
