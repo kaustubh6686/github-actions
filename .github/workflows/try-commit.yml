@@ -31,7 +31,7 @@ jobs:
       
       - name: Install required depencies
         run: |
-          echo $GITHUB_WORKKSPACE
+          echo ${GITHUB_WORKKSPACE}
           pwd;
       
 
