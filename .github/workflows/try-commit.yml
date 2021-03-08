@@ -32,7 +32,7 @@ jobs:
       - name: Install required depencies
         run: |
           echo "$GITHUB_WORKKSPACE"
-          pwd;
+
       
 
 #       # Runs a single command using the runners shell
