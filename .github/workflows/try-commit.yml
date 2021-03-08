@@ -31,7 +31,9 @@ jobs:
       
       - name: Install required depencies
         run: |
-          ls
+          touch testfile.html
+          git add testfile.html
+          git commit -m ${{github.event.inputs.message}}
 
       
 
