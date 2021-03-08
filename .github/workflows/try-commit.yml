@@ -5,6 +5,9 @@ name: Try Commit
 # Controls when the action will run. 
 on:
   # Allows you to run this workflow manually from the Actions tab
+  push:
+    branches:
+      - master
   workflow_dispatch:
     inputs:
       message: 
@@ -28,7 +31,7 @@ jobs:
       
       - name: Install required depencies
         run: |
-          echo "{{ $GITHUB_WORKKSPACE }}"
+          echo $GITHUB_WORKKSPACE
           pwd;
       
 
