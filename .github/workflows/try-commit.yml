@@ -28,6 +28,8 @@ jobs:
       
       - name: Install required depencies
         run: |
+          git config --global user.email "repos@github.com"
+          git config --global user.name "Github Action"
           touch testfile.html
           git add testfile.html
           git commit -m "${{github.event.inputs.message}}"
