@@ -33,7 +33,7 @@ jobs:
         run: |
           touch testfile.html
           git add testfile.html
-          git commit -m ${{github.event.inputs.message}}
+          git commit -m "${{github.event.inputs.message}}"
 
       
 
